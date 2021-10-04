@@ -8,7 +8,7 @@ A project for weakly supervised segmentation of sensor data from human demonstra
 </p>
 <br />
 
-As shown above, our algorithm takes as inputs: (a) sensor data recorded during a human demonstration of a complete task, and (b) a set of "primitive" actions that can be combined to perform the complete task. Given a single manually labelled demonstration of the task, the algorithm is able to automatically label and segment other demonstrations and output the primitive sequence that was executed by the human. Below is an example of what the **data and results** look like for two tasks: putting a cap on a bottle and screwing a threaded pipe. **Note** that the algorithm generalizes to different objects. As long as the task involves the same set of primitive actions, we are able to label and segment the sensor data.
+As shown above, our algorithm takes as inputs: (a) sensor data recorded during a human demonstration of a complete task, and (b) a set of "primitive" actions that can be combined to perform the complete task. Given **_a single manually labelled demonstration_** of the task, the algorithm is able to automatically label and segment other demonstrations and output the primitive sequence that was executed by the human. Below is an example of what the **data and results** look like for two tasks: putting a cap on a bottle and screwing a threaded pipe. **Note** that the algorithm generalizes to different objects. As long as the task involves the same set of primitive actions, we are able to label and segment the sensor data.
 
 <br />
 <p align="center">
