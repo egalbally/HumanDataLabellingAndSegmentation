@@ -30,7 +30,9 @@ As shown above, our algorithm takes as inputs: (a) sensor data recorded during a
 
 ## Analysis: 
 
-**_Note_** - this code requires Python 3
+Requirement:  ![Python](https://img.shields.io/badge/Python->=3.7-Blue?logo=python)
+<!-- **_Note_** - this code requires Python 3 
+ -->
 
    - Directories: 
       - /figures
