@@ -17,6 +17,7 @@ As shown above, our algorithm takes as inputs: (a) sensor data recorded during a
 <br />
 
 ## Data: 
+  - The complete raw data can be found here: [Project Data Set](https://drive.google.com/drive/folders/1xkGvRUSKXV1l5X8-9bTzfx_CLLtIlNwi?usp=sharing)
   - Human demonstrations of complete manipulation tasks
   - Manipulated object pose and contact forces and moments (recorded using optitrack and a 6DOF optoforce sensor)
   - Objects: small, medium, large bottle, lightbulb, pipe
