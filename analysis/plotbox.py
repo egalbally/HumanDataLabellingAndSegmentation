@@ -1,6 +1,6 @@
 """
 Make box plot to visualize labelling success for each primitive
-Same purpose as the confusion matrix
+
 """
 
 import numpy as np

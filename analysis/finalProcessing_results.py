@@ -2,7 +2,9 @@
  finalProcessing_results.py
  
  Input: runs you want to run and num of Tmatrix updates    
- Output: Plots segmented data both manual and automatic
+ Output: 
+ 	- Plots segmented data both manual and automatic
+ 	- Computes success rate as the similarity between demonstrated and labelled primitive sequences
 
  *note -> likelihood plots are created and saved inside 
        the expectation_step called by train and test in gmm.py

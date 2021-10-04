@@ -6,11 +6,11 @@ Plots Tmatrix performance related info
 # Select runs to plot and calculat success rate at each Tmat update
 # run2plot = [2, 12]
 run2plot = [2, 6, 18]
-success_a = np.genfromtxt("oldResults/StateEstimation/results/run{0:d}_successRates".format(run2plot[0]),skip_header=1)
+success_a = np.genfromtxt("past_results/stateEstimation/results/run{0:d}_successRates".format(run2plot[0]),skip_header=1)
 success_a = success_a[:,1]
-success_b = np.genfromtxt("oldResults/StateEstimation/results/run{0:d}_successRates".format(run2plot[1]),skip_header=1)
+success_b = np.genfromtxt("past_results/stateEstimation/results/run{0:d}_successRates".format(run2plot[1]),skip_header=1)
 success_b = success_b[:,1]
-success_c = np.genfromtxt("oldResults/StateEstimation/results/run{0:d}_successRates".format(run2plot[2]),skip_header=1)
+success_c = np.genfromtxt("past_results/stateEstimation/results/run{0:d}_successRates".format(run2plot[2]),skip_header=1)
 success_c = success_c[:,1]
 Tupdate = np.arange(0,numTMatrixUpdates,1)
 
@@ -19,7 +19,7 @@ success_sum_prev = np.zeros(numTMatrixUpdates)
 for i in range(1,NUM_RUNS):
     if i == 11 or i == 16:
         continue
-    success = np.genfromtxt("oldResults/StateEstimation/results/run{0:d}_successRates".format(i),skip_header=1)
+    success = np.genfromtxt("past_results/stateEstimation/results/run{0:d}_successRates".format(i),skip_header=1)
     success = success[:,1]
     success_sum = success_sum + success
 success_avg = success_sum/(NUM_RUNS-1)
@@ -54,7 +54,7 @@ plt.subplot(312)
 # each column is the evolution of an element through the iterations
 Tdiag = np.zeros((numTMatrixUpdates, n_primitives)) 
 for i in range(numTMatrixUpdates):
-    T = np.genfromtxt("oldResults/StateEstimation/transitions/T_{0:d}".format(i))
+    T = np.genfromtxt("past_results/stateEstimation/transitions/T_{0:d}".format(i))
     Tdiag[i,:] = T.diagonal() # the 6 diagonal elements   
 Tupdate = np.arange(0,numTMatrixUpdates,1)
 
@@ -74,8 +74,8 @@ plt.subplot(313)
 # Tdiff: frobenious norm of the difference between consecutive Ts
 Tdiff = np.zeros(numTMatrixUpdates-1) 
 for i in range(numTMatrixUpdates-1):
-    T = np.genfromtxt("oldResults/StateEstimation/transitions/T_{0:d}".format(i))
-    Tnext = np.genfromtxt("oldResults/StateEstimation/transitions/T_{0:d}".format(i+1))
+    T = np.genfromtxt("past_results/stateEstimation/transitions/T_{0:d}".format(i))
+    Tnext = np.genfromtxt("past_results/stateEstimation/transitions/T_{0:d}".format(i+1))
     Tdiff[i] = np.sqrt((np.linalg.norm(T-Tnext, 'fro')/36))
 Tupdate = np.arange(1,numTMatrixUpdates,1)
 plt.plot(Tupdate, Tdiff)
