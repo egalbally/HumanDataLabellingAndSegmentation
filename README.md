@@ -1,8 +1,36 @@
-# rubberDucky1
-Hi I'm a pato. Make sure you have python3.
+# Learning to Label and Segment Human Demonstrations
 
-# Contents 
+A project for weakly supervised segmentation of sensor data from human demonstrations. A Hidden Markov Model (HMM) with a particle filter is used to model the system and determine the action being performed by the human at each point in time.
+
+<br />
+<p align="center">
+  <img src="https://github.com/egalbally/HumanDataLabellingAndSegmentation/blob/master/readme_imgs/method.png" width="550"/>
+</p>
+<br />
+
+As shown above, our algorithm takes as inputs: (a) sensor data recorded during a human demonstration of a complete task, and (b) a set of "primitive" actions that can be combined to perform the complete task. Given a single manually labelled demonstration of the task, the algorithm is able to automatically label and segment other demonstrations and output the primitive sequence that was executed by the human. Below is an example of what the **data and results** look like for two tasks: putting a cap on a bottle and screwing a threaded pipe. **Note** that the algorithm generalizes to different objects. As long as the task involves the same set of primitive actions, we are able to label and segment the sensor data.
+
+<br />
+<p align="center">
+  <img src="https://github.com/egalbally/HumanDataLabellingAndSegmentation/blob/master/readme_imgs/sampleResults.png" width="750"/>
+</p>
+<br />
+
+## Data: 
+  - Human demonstrations of complete manipulation tasks
+  - Manipulated object pose and contact forces and moments (recorded using optitrack and a 6DOF optoforce sensor)
+  - Objects: small, medium, large bottle, lightbulb, pipe
+
+<br />
+<p align="center">
+  <img src="https://github.com/egalbally/HumanDataLabellingAndSegmentation/blob/master/readme_imgs/data.PNG" width="750"/>
+</p>
+<br />
+
 ## Analysis: 
+
+**_Note_** - this code requires Python 3
+
    - Directories: 
       - /figures
       - /figures2label
@@ -42,11 +70,6 @@ Hi I'm a pato. Make sure you have python3.
        - jupyter notebooks - used for plot debugging
        - test.py - uses classifier.py 
     
-## Data: 
-  - human demonstrations of complete manipulation tasks
-  - manipulated object pose and contact forces and moments (recorded using optitrack and a 6DOF optoforce sensor)
-  - objects: small, medium, large bottle, lightbulb, pipe
-    
 ## Training: 
   - network.py 
-  - learns a transition model for the task based on the data labelled by the gmm
+  - Learns a transition model for the task based on the data labelled by the gmm
