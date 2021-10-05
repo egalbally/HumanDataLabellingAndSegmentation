@@ -74,5 +74,6 @@ Requirement:  ![Python](https://img.shields.io/badge/Python->=3.7-Blue?logo=pyth
        - test.py - uses classifier.py 
     
 ## Training: 
+Requirement: ![Pytorch](https://img.shields.io/badge/PyTorch->=1.5.0-Red?logo=pytorch)
   - network.py 
   - Learns a transition model for the task based on the data labelled by the gmm
